@@ -1,0 +1,34 @@
+/target/
+/.idea/
+*.iml
+*.class
+*.log
+*.war
+*.jar
+.mvn/
+!mvnw
+!mvnw.cmd
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+out/
+
+# Mac
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Local env
+.env
+
+# Database
+*.db
+
+# Others
+logs/
+
