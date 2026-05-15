@@ -24,17 +24,20 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest request) {
+        log.debug("register() endpoint called");
         return ResponseEntity.ok(authService.register(request));
     }
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
+        log.debug("login() endpoint called");
         return ResponseEntity.ok(authService.login(request));
     }
 
     @PutMapping("/change-password")
     public ResponseEntity<AuthResponse> changePassword(@Valid @RequestBody ChangePasswordRequest request,
                                                        Authentication authentication) {
+        log.debug("changePassword() endpoint called");
         return ResponseEntity.ok(authService.changePassword(authentication.getName(), request));
     }
 }

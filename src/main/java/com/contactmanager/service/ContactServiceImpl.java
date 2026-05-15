@@ -82,8 +82,12 @@ public class ContactServiceImpl implements ContactService {
     @Override
     @Transactional
     public void deleteContact(UUID id) {
+        log.debug("deleteContact() entry with id={}", id);
+
         Contact contact = getOwnedContactOrThrow(id);
         contactRepository.delete(contact);
+
+        log.info("Contact deleted successfully - id={}", id);
     }
 
     private User getCurrentUser() {

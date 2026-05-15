@@ -78,19 +78,28 @@ public class AuthServiceImpl implements AuthService {
     @Override
     @Transactional
     public AuthResponse changePassword(String authenticatedEmail, ChangePasswordRequest request) {
+        log.debug("changePassword() entry for email={}", authenticatedEmail);
+        
         User user = userRepository.findByEmail(authenticatedEmail)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+                .orElseThrow(() -> {
+                    log.error("Password change failed: user not found - email={}", authenticatedEmail);
+                    return new UsernameNotFoundException("User not found");
+                });
 
         if (!passwordEncoder.matches(request.getCurrentPassword(), user.getPassword())) {
+            log.warn("Password change failed: incorrect current password - email={}", authenticatedEmail);
             throw new ResponseStatusException(BAD_REQUEST, "Current password is incorrect");
         }
 
         if (request.getCurrentPassword().equals(request.getNewPassword())) {
+            log.warn("Password change failed: new password same as current - email={}", authenticatedEmail);
             throw new ResponseStatusException(BAD_REQUEST, "New password must be different from current password");
         }
 
         user.setPassword(passwordEncoder.encode(request.getNewPassword()));
         userRepository.save(user);
+        
+        log.info("Password changed successfully - email={}", authenticatedEmail);
 
         UserDetails userDetails = userDetailsService.loadUserByUsername(user.getEmail());
         String token = jwtUtil.generateToken(userDetails);

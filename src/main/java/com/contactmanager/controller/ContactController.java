@@ -33,16 +33,19 @@ public class ContactController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(required = false, defaultValue = "") String search) {
+        log.debug("getContacts() endpoint called with page={}, size={}, search={}", page, size, search);
         return ResponseEntity.ok(contactService.getContacts(page, size, search));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ContactResponse> getContact(@PathVariable UUID id) {
+        log.debug("getContact() endpoint called with id={}", id);
         return ResponseEntity.ok(contactService.getContactById(id));
     }
 
     @PostMapping
     public ResponseEntity<ContactResponse> createContact(@Valid @RequestBody ContactRequest request) {
+        log.debug("createContact() endpoint called");
         ContactResponse response = contactService.createContact(request);
         return ResponseEntity.created(URI.create("/api/contacts/" + response.getId())).body(response);
     }
@@ -50,11 +53,13 @@ public class ContactController {
     @PutMapping("/{id}")
     public ResponseEntity<ContactResponse> updateContact(@PathVariable UUID id,
                                                          @Valid @RequestBody ContactRequest request) {
+        log.debug("updateContact() endpoint called with id={}", id);
         return ResponseEntity.ok(contactService.updateContact(id, request));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteContact(@PathVariable UUID id) {
+        log.debug("deleteContact() endpoint called with id={}", id);
         contactService.deleteContact(id);
         return ResponseEntity.noContent().build();
     }
