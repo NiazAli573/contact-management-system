@@ -44,17 +44,19 @@ export default function RegisterPage() {
       <style>{authStyles}</style>
       <div className="auth-container" style={{ maxWidth: 480 }}>
         <div className="auth-brand">
-          <div className="auth-logo">✦</div>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" className="auth-logo">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+          </svg>
           <h1>ContactHub</h1>
           <p>Create your free account today</p>
         </div>
 
-        <form className="card auth-card" onSubmit={handleSubmit} noValidate>
+        <form className="card card-elevated auth-card" onSubmit={handleSubmit} noValidate>
           <h2 className="auth-card-title">Create Account</h2>
 
           {error && <div className="alert alert-error" role="alert">{error}</div>}
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-16)' }}>
             <div className="form-group">
               <label className="form-label" htmlFor="reg-firstName">First Name *</label>
               <input id="reg-firstName" className="form-input" type="text" name="firstName"
@@ -92,7 +94,7 @@ export default function RegisterPage() {
           </div>
 
           <button id="reg-submit" className="btn btn-primary btn-lg" type="submit"
-            disabled={loading} style={{ width: '100%', marginTop: '0.5rem' }}>
+            disabled={loading} style={{ width: '100%', marginTop: '0.5rem', padding: '14px 24px' }}>
             {loading ? <><span className="spinner" /> Creating account…</> : 'Create Account'}
           </button>
 
@@ -108,23 +110,45 @@ export default function RegisterPage() {
 
 const authStyles = `
   .auth-page {
-    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-32);
+    background: var(--color-fog);
   }
-  .auth-container { width: 100%; display: flex; flex-direction: column; gap: 2rem; }
-  .auth-brand { text-align: center; }
+  .auth-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-32);
+  }
+  .auth-brand {
+    text-align: center;
+  }
   .auth-logo {
-    font-size: 2.5rem; color: var(--accent); margin-bottom: 0.5rem;
-    filter: drop-shadow(0 0 12px var(--accent-glow)); animation: pulse 3s ease-in-out infinite;
+    color: var(--color-rausch-coral);
+    margin-bottom: var(--spacing-8);
   }
   .auth-brand h1 {
-    background: linear-gradient(135deg, var(--accent), #60a5fa);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    margin-bottom: 0.4rem;
+    color: var(--color-rausch-coral);
+    margin-bottom: var(--spacing-8);
+    font-size: var(--text-display);
+    letter-spacing: var(--tracking-display);
   }
-  .auth-brand p { font-size: 0.95rem; }
-  .auth-card { display: flex; flex-direction: column; gap: 1.1rem; }
-  .auth-card-title { margin-bottom: 0.25rem; }
-  .auth-switch { text-align: center; font-size: 0.88rem; color: var(--text-muted); margin-top: 0.25rem; }
-  .auth-switch a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  .auth-switch a:hover { text-decoration: underline; }
+  .auth-brand p { font-size: var(--text-body); color: var(--color-slate); }
+  .auth-card { display: flex; flex-direction: column; gap: var(--spacing-20); padding: var(--spacing-32); }
+  .auth-card-title { margin-bottom: var(--spacing-4); }
+  .auth-switch {
+    text-align: center;
+    font-size: var(--text-body);
+    color: var(--color-slate);
+    margin-top: var(--spacing-4);
+  }
+  .auth-switch a {
+    color: var(--color-carbon);
+    text-decoration: underline;
+    font-weight: var(--font-weight-semibold);
+  }
+  .auth-switch a:hover { color: var(--color-rausch-coral); }
 `;

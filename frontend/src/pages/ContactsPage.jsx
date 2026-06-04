@@ -21,7 +21,7 @@ export default function ContactsPage() {
   const [editContact, setEditContact] = useState(null);
   const [deleteId, setDeleteId]   = useState(null);
 
-  const PAGE_SIZE = 9;
+  const PAGE_SIZE = 12;
 
   const fetchContacts = useCallback(async () => {
     setLoading(true);
@@ -52,35 +52,47 @@ export default function ContactsPage() {
       <Navbar />
       <main className="contacts-main">
         <div className="container">
+          
+          <div className="search-section">
+            <SearchBar value={search} onChange={handleSearch} placeholder="Search destinations, err, contacts..." />
+          </div>
+
           {/* Header */}
           <div className="contacts-header">
             <div>
-              <h1 className="contacts-title">My Contacts</h1>
-              <p style={{ fontSize: '0.9rem' }}>
+              <h2 className="section-heading">
+                All Contacts
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginLeft: '8px', display: 'inline-block', verticalAlign: 'middle'}}>
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </h2>
+              <p className="section-subtext">
                 {totalElements} contact{totalElements !== 1 ? 's' : ''} total
               </p>
             </div>
             <button id="btn-create-contact" className="btn btn-primary" onClick={() => setShowCreate(true)}>
-              <span>＋</span> New Contact
+              New Contact
             </button>
           </div>
-
-          {/* Search */}
-          <SearchBar value={search} onChange={handleSearch} placeholder="Search by name…" />
 
           {/* Error */}
           {error && <div className="alert alert-error">{error}</div>}
 
           {/* Contact Grid */}
           {loading ? (
-            <div className="contacts-loading">
+            <div className="contacts-grid">
               {[...Array(6)].map((_, i) => <div key={i} className="skeleton-card" />)}
             </div>
           ) : contacts.length === 0 ? (
             <div className="empty-state">
-              <div className="empty-state-icon">👤</div>
+              <div className="empty-state-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
               <h3>{search ? 'No contacts match your search' : 'No contacts yet'}</h3>
-              <p>{search ? 'Try a different search term' : 'Click "New Contact" to add your first contact'}</p>
+              <p>{search ? 'Try adjusting your filters' : 'Start building your network'}</p>
               {!search && (
                 <button className="btn btn-primary" onClick={() => setShowCreate(true)}>
                   Add First Contact
@@ -133,28 +145,41 @@ export default function ContactsPage() {
 }
 
 const styles = `
-  .contacts-main { flex: 1; padding: 2rem 0 4rem; }
+  .contacts-main { 
+    flex: 1; 
+    padding: var(--spacing-40) 0 var(--spacing-48); 
+  }
+  .search-section {
+    display: flex;
+    justify-content: center;
+  }
   .contacts-header {
     display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
+    margin-bottom: var(--spacing-16); flex-wrap: wrap; gap: var(--spacing-16);
   }
-  .contacts-title { margin-bottom: 0.2rem; }
+  .section-heading {
+    font-size: var(--text-heading);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-carbon);
+    letter-spacing: var(--tracking-heading);
+    margin: 0;
+  }
+  .section-subtext {
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-slate);
+    margin-top: 4px;
+  }
   .contacts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  .contacts-loading {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-24) var(--spacing-16); /* slightly more vertical gap */
+    margin-bottom: var(--spacing-48);
   }
   .skeleton-card {
-    height: 160px;
-    border-radius: var(--radius-lg);
-    background: linear-gradient(90deg, var(--bg-elevated) 25%, var(--bg-glass) 50%, var(--bg-elevated) 75%);
+    height: 300px;
+    border-radius: var(--radius-cards);
+    background: linear-gradient(90deg, var(--color-pebble) 25%, var(--color-stone) 50%, var(--color-pebble) 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
   }

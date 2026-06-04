@@ -31,7 +31,7 @@ export default function ProfilePage() {
       <Navbar />
       <main className="profile-main">
         <div className="container" style={{ maxWidth: 680 }}>
-          <h1 style={{ marginBottom: '1.5rem' }}>My Profile</h1>
+          <h1 className="profile-page-title">My Profile</h1>
 
           {error && <div className="alert alert-error">{error}</div>}
 
@@ -47,14 +47,14 @@ export default function ProfilePage() {
                   {profile.firstName?.[0]}{profile.lastName?.[0]}
                 </div>
                 <div>
-                  <h2>{profile.firstName} {profile.lastName}</h2>
+                  <h2 className="profile-name">{profile.firstName} {profile.lastName}</h2>
                   <span className="badge badge-teal">{profile.role}</span>
                 </div>
               </div>
 
               {/* Info Grid */}
-              <div className="card profile-info">
-                <h3 style={{ marginBottom: '1.25rem', color: 'var(--text-secondary)' }}>Account Details</h3>
+              <div className="profile-info-section">
+                <h3 className="profile-section-title">Account Details</h3>
                 <div className="profile-grid">
                   <ProfileField label="Email" value={profile.email} icon="✉" />
                   <ProfileField label="Phone" value={profile.phoneNumber || '—'} icon="📞" />
@@ -65,12 +65,12 @@ export default function ProfilePage() {
 
               {/* Actions */}
               <div className="profile-actions">
-                <button id="btn-change-password" className="btn btn-ghost"
+                <button id="btn-change-password" className="btn btn-pill"
                   onClick={() => setShowPwdModal(true)}>
-                  🔐 Change Password
+                  Change Password
                 </button>
-                <button id="btn-logout" className="btn btn-danger" onClick={handleLogout}>
-                  ⬡ Logout
+                <button id="btn-logout" className="btn btn-danger-solid" onClick={handleLogout}>
+                  Logout
                 </button>
               </div>
             </>
@@ -103,37 +103,54 @@ function formatDate(iso) {
 }
 
 const styles = `
-  .profile-main { flex: 1; padding: 2rem 0 4rem; }
+  .profile-main { flex: 1; padding: var(--spacing-40) 0 var(--spacing-48); }
+  .profile-page-title {
+    font-size: var(--text-display);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-display);
+    margin-bottom: var(--spacing-24);
+  }
   .profile-banner {
-    display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem;
+    display: flex; align-items: center; gap: var(--spacing-24); margin-bottom: var(--spacing-32);
+    padding: var(--spacing-24); border: 1px solid var(--color-mist);
   }
   .profile-avatar {
-    width: 72px; height: 72px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), #60a5fa);
+    width: 80px; height: 80px; border-radius: 50%;
+    background: var(--color-rausch-coral);
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; font-weight: 700; color: #0a0f1e;
+    font-size: var(--text-display); font-weight: var(--font-weight-semibold); color: var(--color-cloud);
     flex-shrink: 0; text-transform: uppercase;
-    box-shadow: var(--shadow-accent);
   }
-  .profile-info { margin-bottom: 1rem; }
+  .profile-name {
+    font-size: var(--text-heading);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 4px;
+  }
+  .profile-info-section { margin-bottom: var(--spacing-32); }
+  .profile-section-title {
+    margin-bottom: var(--spacing-16);
+    color: var(--color-slate);
+    font-weight: var(--font-weight-medium);
+  }
   .profile-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-16);
   }
   .profile-field {
-    display: flex; align-items: flex-start; gap: 0.75rem;
-    padding: 0.75rem; border-radius: var(--radius-sm);
-    background: var(--bg-glass-light);
-    border: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: var(--spacing-12);
+    padding: var(--spacing-16); border-radius: var(--radius-cards);
+    background: var(--color-cloud);
+    border: 1px solid var(--color-mist);
     transition: border-color var(--transition);
   }
-  .profile-field:hover { border-color: var(--border-accent); }
-  .profile-field-icon { font-size: 1.2rem; }
-  .profile-field-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-  .profile-field-value { font-size: 0.95rem; font-weight: 500; color: var(--text-primary); margin-top: 0.15rem; }
-  .profile-actions { display: flex; gap: 0.75rem; margin-top: 1rem; }
+  .profile-field:hover { border-color: var(--color-stone); }
+  .profile-field-icon { font-size: 1.2rem; filter: grayscale(1); opacity: 0.6; }
+  .profile-field-label { font-size: var(--text-caption); color: var(--color-slate); text-transform: uppercase; font-weight: var(--font-weight-semibold); letter-spacing: 0.05em; }
+  .profile-field-value { font-size: var(--text-body); font-weight: var(--font-weight-medium); color: var(--color-carbon); margin-top: 2px; }
+  .profile-actions { display: flex; gap: var(--spacing-16); margin-top: var(--spacing-32); padding-top: var(--spacing-24); border-top: 1px solid var(--color-mist); }
   @media (max-width: 500px) {
     .profile-grid { grid-template-columns: 1fr; }
     .profile-banner { flex-direction: column; text-align: center; }
-    .profile-actions { flex-direction: column; }
+    .profile-actions { flex-direction: column; width: 100%; }
+    .profile-actions .btn { width: 100%; justify-content: center; }
   }
 `;
