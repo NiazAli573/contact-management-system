@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: contact-management-system
+
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=contactsdb;encrypt=false;trustServerCertificate=true
+    username: nas
+    password: nas12122
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+        format_sql: true
+        default_batch_fetch_size: 20
+
+  web:
+    cors:
+      allowed-origins: "http://localhost:5173"
+
+app:
+  jwt:
+    secret: "Y29udGFjdE1hbmFnZW1lbnRTeXN0ZW1TZWNyZXRLZXkyMDI2UHJvZHVjdGlvbkp3dA=="
+    expiration: 86400000   # 24 hours in milliseconds
+
+logging:
+  level:
+    com.contactmanager: DEBUG
+    org.springframework.security: INFO
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql: WARN
+  file:
+    name: logs/contact-management.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
