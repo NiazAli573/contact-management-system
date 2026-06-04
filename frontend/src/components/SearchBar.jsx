@@ -19,7 +19,7 @@ export default function SearchBar({ value, onChange, placeholder = 'Search conta
       <div className="search-bar-pill">
         
         <div className="search-segment">
-          <div className="search-label">Where</div>
+          <div className="search-label">Search</div>
           <input
             id="contact-search"
             className="search-input-raw"
@@ -28,20 +28,6 @@ export default function SearchBar({ value, onChange, placeholder = 'Search conta
             onChange={e => setLocal(e.target.value)}
             placeholder={placeholder}
           />
-        </div>
-        
-        <div className="search-divider"></div>
-
-        <div className="search-segment d-none-mobile">
-          <div className="search-label">Sort</div>
-          <div className="search-placeholder-text">Recent</div>
-        </div>
-
-        <div className="search-divider d-none-mobile"></div>
-
-        <div className="search-segment d-none-mobile">
-          <div className="search-label">Filter</div>
-          <div className="search-placeholder-text">All</div>
         </div>
 
         <button className="search-trigger-btn" aria-label="Search">

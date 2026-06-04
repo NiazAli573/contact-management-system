@@ -41,13 +41,6 @@ export default function Navbar() {
 
         {/* User Utilities (Right) */}
         <div className="header-utilities">
-          <div className="utility-item host-text">Become a user</div>
-          <button className="btn-icon header-globe" aria-label="Language">
-            <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm.01 1.51c1.55 0 2.87.5 4.01 1.48-1 .92-2.3 1.48-4.01 1.48-1.7 0-3.01-.56-4.01-1.48 1.14-.98 2.46-1.48 4.01-1.48zm-5.46 2.5a6.45 6.45 0 0 1 10.9 0 6.47 6.47 0 0 1 0 7.98 6.45 6.45 0 0 1-10.9 0 6.47 6.47 0 0 1 0-7.98zM8 14.49c-1.7 0-3.01-.56-4.01-1.48 1-.92 2.3-1.48 4.01-1.48 1.7 0 3.01.56 4.01 1.48-1.14.98-2.46 1.48-4.01 1.48z"></path>
-            </svg>
-          </button>
-          
           <div className="user-menu-pill" onClick={() => location.pathname === '/profile' ? handleLogout() : navigate('/profile')}>
             <svg className="menu-bars" viewBox="0 0 32 32" width="16" height="16" fill="currentColor" stroke="currentColor" strokeWidth="3">
               <g><path d="M2 16h28M2 24h28M2 8h28"></path></g>
