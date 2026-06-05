@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { contactApi } from '../api/contactApi';
 import Navbar from '../components/Navbar';
 import SearchBar from '../components/SearchBar';
@@ -46,6 +46,37 @@ export default function ContactsPage() {
   const handleUpdate = () => { fetchContacts(); setEditContact(null); };
   const handleDelete = () => { fetchContacts(); setDeleteId(null); };
 
+  const fileInputRef = useRef(null);
+
+  const handleExport = async () => {
+    try {
+      const res = await contactApi.exportContacts();
+      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'contacts.csv');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (e) {
+      setError('Failed to export contacts.');
+    }
+  };
+
+  const handleImport = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    try {
+      setLoading(true);
+      await contactApi.importContacts(file);
+      await fetchContacts();
+    } catch (err) {
+      setError('Failed to import contacts.');
+    } finally {
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  };
+
   return (
     <div className="page-wrapper">
       <style>{styles}</style>
@@ -70,9 +101,24 @@ export default function ContactsPage() {
                 {totalElements} contact{totalElements !== 1 ? 's' : ''} total
               </p>
             </div>
-            <button id="btn-create-contact" className="btn btn-primary" onClick={() => setShowCreate(true)}>
-              New Contact
-            </button>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <button className="btn" style={{ background: 'var(--color-slate)', color: 'white' }} onClick={() => fileInputRef.current?.click()}>
+                Import CSV
+              </button>
+              <input 
+                type="file" 
+                ref={fileInputRef} 
+                style={{ display: 'none' }} 
+                accept=".csv" 
+                onChange={handleImport} 
+              />
+              <button className="btn" style={{ background: 'var(--color-slate)', color: 'white' }} onClick={handleExport}>
+                Export CSV
+              </button>
+              <button id="btn-create-contact" className="btn btn-primary" onClick={() => setShowCreate(true)}>
+                New Contact
+              </button>
+            </div>
           </div>
 
           {/* Error */}

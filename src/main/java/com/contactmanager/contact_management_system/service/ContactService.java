@@ -213,4 +213,100 @@ public class ContactService {
                 .phones(phones)
                 .build();
     }
+
+    // ─── Export/Import ────────────────────────────────────────────────────────
+
+    @Transactional(readOnly = true)
+    public byte[] exportToCsv(User owner) {
+        log.info("Exporting contacts to CSV for user '{}'", owner.getEmail());
+        List<Contact> contacts = contactRepository.findByOwner(owner, Pageable.unpaged()).getContent();
+        
+        try (java.io.StringWriter sw = new java.io.StringWriter();
+             com.opencsv.CSVWriter writer = new com.opencsv.CSVWriter(sw)) {
+            
+            // Header
+            writer.writeNext(new String[]{"FirstName", "LastName", "Title", "Emails", "Phones"});
+            
+            for (Contact contact : contacts) {
+                String emails = contact.getEmails().stream()
+                        .map(e -> e.getEmail() + ":" + e.getLabel().name())
+                        .collect(Collectors.joining("|"));
+                String phones = contact.getPhones().stream()
+                        .map(p -> p.getPhoneNumber() + ":" + p.getLabel().name())
+                        .collect(Collectors.joining("|"));
+                        
+                writer.writeNext(new String[]{
+                        contact.getFirstName(),
+                        contact.getLastName(),
+                        contact.getTitle(),
+                        emails,
+                        phones
+                });
+            }
+            return sw.toString().getBytes();
+        } catch (Exception e) {
+            log.error("Error exporting to CSV", e);
+            throw new RuntimeException("Failed to export contacts to CSV");
+        }
+    }
+
+    @Transactional
+    public void importFromCsv(User owner, org.springframework.web.multipart.MultipartFile file) {
+        log.info("Importing contacts from CSV for user '{}'", owner.getEmail());
+        
+        try (com.opencsv.CSVReader reader = new com.opencsv.CSVReader(new java.io.InputStreamReader(file.getInputStream()))) {
+            List<String[]> lines = reader.readAll();
+            if (lines.isEmpty()) return;
+            
+            // Skip header if it exists
+            int startIdx = lines.get(0)[0].equalsIgnoreCase("FirstName") ? 1 : 0;
+            
+            for (int i = startIdx; i < lines.size(); i++) {
+                String[] row = lines.get(i);
+                if (row.length < 2) continue; // At least first and last name needed
+                
+                String firstName = row[0];
+                String lastName = row[1];
+                String title = row.length > 2 ? row[2] : null;
+                
+                Contact contact = Contact.builder()
+                        .firstName(firstName)
+                        .lastName(lastName)
+                        .title(title)
+                        .owner(owner)
+                        .build();
+                        
+                if (row.length > 3 && StringUtils.hasText(row[3])) {
+                    String[] emailParts = row[3].split("\\|");
+                    for (String part : emailParts) {
+                        String[] ep = part.split(":");
+                        String email = ep[0];
+                        EmailLabel label = EmailLabel.PERSONAL;
+                        if (ep.length > 1) {
+                            try { label = EmailLabel.valueOf(ep[1].toUpperCase()); } catch (Exception ignored) {}
+                        }
+                        contact.getEmails().add(ContactEmail.builder().email(email).label(label).contact(contact).build());
+                    }
+                }
+                
+                if (row.length > 4 && StringUtils.hasText(row[4])) {
+                    String[] phoneParts = row[4].split("\\|");
+                    for (String part : phoneParts) {
+                        String[] pp = part.split(":");
+                        String number = pp[0];
+                        PhoneLabel label = PhoneLabel.MOBILE;
+                        if (pp.length > 1) {
+                            try { label = PhoneLabel.valueOf(pp[1].toUpperCase()); } catch (Exception ignored) {}
+                        }
+                        contact.getPhones().add(ContactPhone.builder().phoneNumber(number).label(label).contact(contact).build());
+                    }
+                }
+                
+                contactRepository.save(contact);
+            }
+        } catch (Exception e) {
+            log.error("Error importing from CSV", e);
+            throw new RuntimeException("Failed to import contacts from CSV");
+        }
+    }
 }

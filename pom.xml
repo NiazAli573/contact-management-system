@@ -88,6 +88,13 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- OpenCSV -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.9</version>
+		</dependency>
+
 		<!-- H2 in-memory / file database (dev/h2 profile and tests) -->
 		<dependency>
 			<groupId>com.h2database</groupId>

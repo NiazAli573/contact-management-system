@@ -73,9 +73,6 @@ public class ContactController {
         return ResponseEntity.ok(contactService.updateContact(currentUser, id, request));
     }
 
-    /**
-     * DELETE /api/contacts/{id} — delete a contact.
-     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteContact(
             @AuthenticationPrincipal User currentUser,
@@ -83,5 +80,32 @@ public class ContactController {
         log.info("DELETE /api/contacts/{} — user: {}", id, currentUser.getEmail());
         contactService.deleteContact(currentUser, id);
         return ResponseEntity.noContent().build();
+    }
+
+    /**
+     * GET /api/contacts/export — Export all contacts to a CSV file
+     */
+    @GetMapping(value = "/export", produces = "text/csv")
+    public ResponseEntity<byte[]> exportContacts(@AuthenticationPrincipal User currentUser) {
+        log.info("GET /api/contacts/export — user: {}", currentUser.getEmail());
+        byte[] csvData = contactService.exportToCsv(currentUser);
+        
+        org.springframework.http.HttpHeaders headers = new org.springframework.http.HttpHeaders();
+        headers.setContentDispositionFormData("attachment", "contacts.csv");
+        headers.setContentType(org.springframework.http.MediaType.parseMediaType("text/csv"));
+        
+        return new ResponseEntity<>(csvData, headers, HttpStatus.OK);
+    }
+
+    /**
+     * POST /api/contacts/import — Import contacts from a CSV file
+     */
+    @PostMapping(value = "/import", consumes = org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Void> importContacts(
+            @AuthenticationPrincipal User currentUser,
+            @RequestParam("file") org.springframework.web.multipart.MultipartFile file) {
+        log.info("POST /api/contacts/import — user: {}", currentUser.getEmail());
+        contactService.importFromCsv(currentUser, file);
+        return ResponseEntity.ok().build();
     }
 }
