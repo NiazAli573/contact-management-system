@@ -861,3 +861,820 @@ Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connectio
 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:439)
 	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
 	... 128 common frames omitted
+2026-06-06 16:48:33.807 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-06 16:48:33.886 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Starting ContactManagementSystemApplication using Java 25 with PID 8232 (D:\Projects\contact-management-system\target\classes started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 16:48:33.888 [restartedMain] DEBUG c.c.c.ContactManagementSystemApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 16:48:33.889 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-06 16:48:33.994 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-06 16:48:33.996 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-06 16:48:35.365 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-06 16:48:35.476 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 4 JPA repository interfaces.
+2026-06-06 16:48:36.558 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-06 16:48:36.584 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-06 16:48:36.593 [restartedMain] INFO  o.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-06 16:48:36.593 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-06-06 16:48:36.692 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-06 16:48:36.693 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2696 ms
+2026-06-06 16:48:36.793 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-06 16:48:37.041 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@16fbb84f
+2026-06-06 16:48:37.043 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-06 16:48:37.067 [restartedMain] INFO  o.s.b.a.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/contactsdb'
+2026-06-06 16:48:37.284 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-06 16:48:37.405 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-06 16:48:37.472 [restartedMain] INFO  o.h.c.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-06 16:48:38.014 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-06 16:48:38.136 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-06 16:48:39.872 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-06 16:48:40.247 [restartedMain] WARN  o.h.engine.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-06-06 16:48:40.247 [restartedMain] WARN  o.h.engine.jdbc.spi.SqlExceptionHelper - constraint "uk6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2026-06-06 16:48:40.252 [restartedMain] WARN  o.h.engine.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-06-06 16:48:40.252 [restartedMain] WARN  o.h.engine.jdbc.spi.SqlExceptionHelper - constraint "uk9q63snka3mdh91as4io72espi" of relation "users" does not exist, skipping
+2026-06-06 16:48:40.288 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 16:48:40.873 [restartedMain] DEBUG c.c.c.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-06 16:48:40.988 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-06 16:48:40.989 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-06 16:48:41.059 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-06 16:48:41.975 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-06 16:48:43.055 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-06 16:48:43.086 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-06 16:48:43.139 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-06 16:48:43.153 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Started ContactManagementSystemApplication in 10.427 seconds (process running for 11.498)
+2026-06-06 16:50:48.300 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-06 16:50:48.301 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-06 16:50:48.311 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2026-06-06 16:50:49.128 [http-nio-8080-exec-1] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'niaz.sst13041@gmail.com' from JWT token
+2026-06-06 16:50:49.165 [http-nio-8080-exec-1] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: niaz.sst13041@gmail.com
+2026-06-06 16:50:49.544 [http-nio-8080-exec-1] WARN  c.c.c.security.CustomUserDetailsService - User not found with email: niaz.sst13041@gmail.com
+2026-06-06 16:50:49.559 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: niaz.sst13041@gmail.com
+	at com.contactmanager.contact_management_system.security.CustomUserDetailsService.lambda$loadUserByUsername$0(CustomUserDetailsService.java:29)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.contactmanager.contact_management_system.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:27)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.contactmanager.contact_management_system.security.CustomUserDetailsService$$SpringCGLIB$$0.loadUserByUsername(<generated>)
+	at com.contactmanager.contact_management_system.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-06-06 16:50:49.648 [http-nio-8080-exec-2] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'niaz.sst13041@gmail.com' from JWT token
+2026-06-06 16:50:49.649 [http-nio-8080-exec-2] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: niaz.sst13041@gmail.com
+2026-06-06 16:50:49.656 [http-nio-8080-exec-2] WARN  c.c.c.security.CustomUserDetailsService - User not found with email: niaz.sst13041@gmail.com
+2026-06-06 16:50:49.659 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with email: niaz.sst13041@gmail.com
+	at com.contactmanager.contact_management_system.security.CustomUserDetailsService.lambda$loadUserByUsername$0(CustomUserDetailsService.java:29)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.contactmanager.contact_management_system.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:27)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.contactmanager.contact_management_system.security.CustomUserDetailsService$$SpringCGLIB$$0.loadUserByUsername(<generated>)
+	at com.contactmanager.contact_management_system.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-06-06 16:51:04.553 [http-nio-8080-exec-3] INFO  c.c.c.controller.AuthController - POST /api/auth/login — email: niaz.sst13041@gmail.com
+2026-06-06 16:51:04.554 [http-nio-8080-exec-3] INFO  c.c.c.service.AuthService - Login attempt for email: niaz.sst13041@gmail.com
+2026-06-06 16:51:04.916 [http-nio-8080-exec-3] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: niaz.sst13041@gmail.com
+2026-06-06 16:51:04.924 [http-nio-8080-exec-3] WARN  c.c.c.security.CustomUserDetailsService - User not found with email: niaz.sst13041@gmail.com
+2026-06-06 16:51:05.284 [http-nio-8080-exec-3] WARN  c.c.c.exception.GlobalExceptionHandler - Authentication failed at /api/auth/login: Bad credentials
+2026-06-06 16:51:05.393 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2026-06-06 16:51:32.872 [http-nio-8080-exec-4] INFO  c.c.c.controller.AuthController - POST /api/auth/register — email: admin@salams.edu
+2026-06-06 16:51:32.875 [http-nio-8080-exec-4] INFO  c.c.c.service.AuthService - Registering new user with email: admin@salams.edu
+2026-06-06 16:51:33.420 [http-nio-8080-exec-4] INFO  c.c.c.service.AuthService - User registered successfully with id: 1
+2026-06-06 16:51:33.422 [http-nio-8080-exec-4] DEBUG c.c.c.security.JwtTokenProvider - Generating JWT token for user: admin@salams.edu
+2026-06-06 16:51:33.618 [http-nio-8080-exec-5] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:51:33.620 [http-nio-8080-exec-5] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:51:33.684 [http-nio-8080-exec-5] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: admin@salams.edu, page: 0, search: 'null'
+2026-06-06 16:51:33.686 [http-nio-8080-exec-5] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'admin@salams.edu', page=0, size=12, search='null'
+2026-06-06 16:51:33.801 [http-nio-8080-exec-6] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:51:33.803 [http-nio-8080-exec-6] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:51:33.824 [http-nio-8080-exec-6] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: admin@salams.edu, page: 0, search: 'null'
+2026-06-06 16:51:33.826 [http-nio-8080-exec-6] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'admin@salams.edu', page=0, size=12, search='null'
+2026-06-06 16:51:52.074 [http-nio-8080-exec-7] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:51:52.076 [http-nio-8080-exec-7] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:51:52.271 [http-nio-8080-exec-7] INFO  c.c.c.controller.ContactController - POST /api/contacts — user: admin@salams.edu
+2026-06-06 16:51:52.272 [http-nio-8080-exec-7] INFO  c.c.c.service.ContactService - Creating contact 'Muhammad  Ali' for user 'admin@salams.edu'
+2026-06-06 16:51:52.296 [http-nio-8080-exec-7] INFO  c.c.c.service.ContactService - Contact created with id=1
+2026-06-06 16:51:52.359 [http-nio-8080-exec-8] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:51:52.361 [http-nio-8080-exec-8] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:51:52.381 [http-nio-8080-exec-8] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: admin@salams.edu, page: 0, search: 'null'
+2026-06-06 16:51:52.383 [http-nio-8080-exec-8] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'admin@salams.edu', page=0, size=12, search='null'
+2026-06-06 16:52:11.760 [http-nio-8080-exec-9] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:52:11.763 [http-nio-8080-exec-9] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:52:11.782 [http-nio-8080-exec-9] INFO  c.c.c.controller.ContactController - POST /api/contacts — user: admin@salams.edu
+2026-06-06 16:52:11.783 [http-nio-8080-exec-9] INFO  c.c.c.service.ContactService - Creating contact 'Masood  Nawaz' for user 'admin@salams.edu'
+2026-06-06 16:52:11.795 [http-nio-8080-exec-9] INFO  c.c.c.service.ContactService - Contact created with id=2
+2026-06-06 16:52:11.827 [http-nio-8080-exec-10] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:52:11.829 [http-nio-8080-exec-10] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:52:11.846 [http-nio-8080-exec-10] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: admin@salams.edu, page: 0, search: 'null'
+2026-06-06 16:52:11.849 [http-nio-8080-exec-10] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'admin@salams.edu', page=0, size=12, search='null'
+2026-06-06 16:52:14.396 [http-nio-8080-exec-1] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:52:14.400 [http-nio-8080-exec-1] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:52:14.416 [http-nio-8080-exec-1] INFO  c.c.c.controller.ContactController - GET /api/contacts/export — user: admin@salams.edu
+2026-06-06 16:52:14.418 [http-nio-8080-exec-1] INFO  c.c.c.service.ContactService - Exporting contacts to CSV for user 'admin@salams.edu'
+2026-06-06 16:52:29.421 [http-nio-8080-exec-2] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:52:29.425 [http-nio-8080-exec-2] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:52:29.444 [http-nio-8080-exec-2] INFO  c.c.c.controller.UserController - GET /api/users/me — user: admin@salams.edu
+2026-06-06 16:52:29.446 [http-nio-8080-exec-2] DEBUG c.c.c.service.UserService - Fetching profile for user: admin@salams.edu
+2026-06-06 16:52:29.497 [http-nio-8080-exec-3] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:52:29.498 [http-nio-8080-exec-3] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:52:29.512 [http-nio-8080-exec-3] INFO  c.c.c.controller.UserController - GET /api/users/me — user: admin@salams.edu
+2026-06-06 16:52:29.512 [http-nio-8080-exec-3] DEBUG c.c.c.service.UserService - Fetching profile for user: admin@salams.edu
+2026-06-06 16:52:40.353 [http-nio-8080-exec-4] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:52:40.356 [http-nio-8080-exec-4] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:52:40.374 [http-nio-8080-exec-4] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: admin@salams.edu, page: 0, search: 'null'
+2026-06-06 16:52:40.375 [http-nio-8080-exec-4] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'admin@salams.edu', page=0, size=12, search='null'
+2026-06-06 16:52:40.415 [http-nio-8080-exec-5] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:52:40.417 [http-nio-8080-exec-5] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:52:40.431 [http-nio-8080-exec-5] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: admin@salams.edu, page: 0, search: 'null'
+2026-06-06 16:52:40.433 [http-nio-8080-exec-5] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'admin@salams.edu', page=0, size=12, search='null'
+2026-06-06 16:53:00.655 [http-nio-8080-exec-6] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:53:00.658 [http-nio-8080-exec-6] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:53:00.675 [http-nio-8080-exec-6] INFO  c.c.c.controller.ContactController - POST /api/contacts — user: admin@salams.edu
+2026-06-06 16:53:00.676 [http-nio-8080-exec-6] INFO  c.c.c.service.ContactService - Creating contact 'Niaz  Ali' for user 'admin@salams.edu'
+2026-06-06 16:53:00.690 [http-nio-8080-exec-6] INFO  c.c.c.service.ContactService - Contact created with id=3
+2026-06-06 16:53:00.720 [http-nio-8080-exec-7] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:53:00.722 [http-nio-8080-exec-7] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:53:00.738 [http-nio-8080-exec-7] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: admin@salams.edu, page: 0, search: 'null'
+2026-06-06 16:53:00.740 [http-nio-8080-exec-7] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'admin@salams.edu', page=0, size=12, search='null'
+2026-06-06 16:54:55.139 [http-nio-8080-exec-8] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:54:55.143 [http-nio-8080-exec-8] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:54:55.166 [http-nio-8080-exec-8] INFO  c.c.c.controller.UserController - GET /api/users/me — user: admin@salams.edu
+2026-06-06 16:54:55.167 [http-nio-8080-exec-8] DEBUG c.c.c.service.UserService - Fetching profile for user: admin@salams.edu
+2026-06-06 16:54:55.204 [http-nio-8080-exec-9] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:54:55.205 [http-nio-8080-exec-9] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:54:55.230 [http-nio-8080-exec-9] INFO  c.c.c.controller.UserController - GET /api/users/me — user: admin@salams.edu
+2026-06-06 16:54:55.232 [http-nio-8080-exec-9] DEBUG c.c.c.service.UserService - Fetching profile for user: admin@salams.edu
+2026-06-06 16:55:01.119 [http-nio-8080-exec-10] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:55:01.122 [http-nio-8080-exec-10] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:55:01.140 [http-nio-8080-exec-10] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: admin@salams.edu, page: 0, search: 'null'
+2026-06-06 16:55:01.142 [http-nio-8080-exec-10] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'admin@salams.edu', page=0, size=12, search='null'
+2026-06-06 16:55:01.202 [http-nio-8080-exec-1] DEBUG c.c.c.security.JwtAuthenticationFilter - Authenticating user 'admin@salams.edu' from JWT token
+2026-06-06 16:55:01.205 [http-nio-8080-exec-1] DEBUG c.c.c.security.CustomUserDetailsService - Loading user by email: admin@salams.edu
+2026-06-06 16:55:01.225 [http-nio-8080-exec-1] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: admin@salams.edu, page: 0, search: 'null'
+2026-06-06 16:55:01.229 [http-nio-8080-exec-1] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'admin@salams.edu', page=0, size=12, search='null'
+2026-06-06 17:09:37.534 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 63 class path changes (0 additions, 63 deletions, 0 modifications)
+2026-06-06 17:09:37.552 [Thread-5] INFO  o.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-06-06 17:09:37.629 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:09:37.644 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-06 17:09:37.673 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-06 17:09:46.691 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Starting ContactManagementSystemApplication using Java 25 with PID 8232 (D:\Projects\contact-management-system\target\classes started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:09:46.691 [restartedMain] DEBUG c.c.c.ContactManagementSystemApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:09:46.692 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-06 17:09:47.061 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-06 17:09:47.062 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2026-06-06 17:09:47.278 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-06 17:09:47.282 [restartedMain] INFO  o.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-06 17:09:47.282 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-06-06 17:09:47.331 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-06 17:09:47.332 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 637 ms
+2026-06-06 17:09:47.371 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-06-06 17:09:47.500 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@1c61ca90
+2026-06-06 17:09:47.500 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-06-06 17:09:47.500 [restartedMain] INFO  o.s.b.a.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/contactsdb'
+2026-06-06 17:09:47.558 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-06 17:09:47.563 [restartedMain] INFO  o.h.c.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-06 17:09:47.588 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-06 17:09:47.610 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-06 17:09:47.662 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-06 17:09:47.663 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:09:47.741 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-06 17:09:48.086 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 769d2edd-97db-458a-a0d2-39f317725ea6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-06 17:09:48.090 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-06 17:09:48.226 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-06 17:09:48.248 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-06 17:09:48.257 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Started ContactManagementSystemApplication in 1.645 seconds (process running for 1276.601)
+2026-06-06 17:09:48.267 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-06-06 17:09:54.531 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 59 class path changes (59 additions, 0 deletions, 0 modifications)
+2026-06-06 17:09:54.556 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:09:54.558 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-06-06 17:09:54.581 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-06-06 17:09:54.760 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Starting ContactManagementSystemApplication using Java 25 with PID 8232 (D:\Projects\contact-management-system\target\classes started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:09:54.761 [restartedMain] DEBUG c.c.c.ContactManagementSystemApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:09:54.761 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-06 17:09:55.297 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-06 17:09:55.427 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 129 ms. Found 4 JPA repository interfaces.
+2026-06-06 17:09:55.840 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-06 17:09:55.842 [restartedMain] INFO  o.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-06 17:09:55.842 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-06-06 17:09:55.887 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-06 17:09:55.887 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1121 ms
+2026-06-06 17:09:55.969 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-06-06 17:09:56.106 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@393e8663
+2026-06-06 17:09:56.106 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-06-06 17:09:56.107 [restartedMain] INFO  o.s.b.a.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/contactsdb'
+2026-06-06 17:09:56.185 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-06 17:09:56.190 [restartedMain] INFO  o.h.c.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-06 17:09:56.204 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-06 17:09:56.222 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-06 17:09:56.546 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-06 17:09:56.763 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:09:57.062 [restartedMain] DEBUG c.c.c.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-06 17:09:57.138 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-06 17:09:57.139 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-06 17:09:57.422 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-06 17:09:58.308 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-06 17:09:58.345 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-06 17:09:58.354 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Started ContactManagementSystemApplication in 3.676 seconds (process running for 1286.699)
+2026-06-06 17:09:58.361 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' customUserDetailsService and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' authenticationProvider (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-06-06 17:10:06.308 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-06 17:10:06.413 [main] INFO  c.c.c.ContactManagementSystemApplicationTests - Starting ContactManagementSystemApplicationTests using Java 25 with PID 3632 (started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:10:06.417 [main] DEBUG c.c.c.ContactManagementSystemApplicationTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:10:06.419 [main] INFO  c.c.c.ContactManagementSystemApplicationTests - The following 1 profile is active: "test"
+2026-06-06 17:10:10.420 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-06 17:10:10.947 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 406 ms. Found 4 JPA repository interfaces.
+2026-06-06 17:10:14.399 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-06 17:10:14.907 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-06 17:10:15.292 [main] INFO  o.h.c.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-06 17:10:18.039 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-06 17:10:18.369 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-06 17:10:20.857 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-06-06 17:10:20.871 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-06 17:10:21.102 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-06 17:10:29.126 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-06 17:10:29.603 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:10:32.253 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-06 17:10:32.256 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-06 17:10:32.560 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-06 17:10:38.368 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-06 17:10:42.419 [main] INFO  c.c.c.ContactManagementSystemApplicationTests - Started ContactManagementSystemApplicationTests in 38.332 seconds (process running for 43.026)
+2026-06-06 17:10:44.557 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2026-06-06 17:10:44.741 [main] INFO  c.c.c.controller.AuthControllerTest - Starting AuthControllerTest using Java 25 with PID 3632 (started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:10:44.742 [main] DEBUG c.c.c.controller.AuthControllerTest - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:10:44.742 [main] INFO  c.c.c.controller.AuthControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-06-06 17:10:47.104 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-06 17:10:47.105 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-06 17:10:48.385 [main] DEBUG c.c.c.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-06 17:10:48.391 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-06-06 17:10:48.392 [main] INFO  o.s.t.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-06-06 17:10:48.400 [main] INFO  o.s.t.web.servlet.TestDispatcherServlet - Completed initialization in 6 ms
+2026-06-06 17:10:48.449 [main] INFO  c.c.c.controller.AuthControllerTest - Started AuthControllerTest in 3.893 seconds (process running for 49.055)
+2026-06-06 17:10:50.083 [main] INFO  c.c.c.controller.AuthController - POST /api/auth/login — email: john@example.com
+2026-06-06 17:10:50.716 [main] WARN  c.c.c.exception.GlobalExceptionHandler - Validation failed at /api/auth/register: Email is required
+2026-06-06 17:10:50.821 [main] WARN  c.c.c.exception.GlobalExceptionHandler - Validation failed at /api/auth/login: Invalid email format
+2026-06-06 17:10:50.876 [main] INFO  c.c.c.controller.AuthController - POST /api/auth/register — email: john@example.com
+2026-06-06 17:10:51.059 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2026-06-06 17:10:51.296 [main] INFO  c.c.c.controller.ContactControllerTest - Starting ContactControllerTest using Java 25 with PID 3632 (started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:10:51.298 [main] DEBUG c.c.c.controller.ContactControllerTest - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:10:51.300 [main] INFO  c.c.c.controller.ContactControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-06-06 17:10:52.804 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-06 17:10:52.805 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-06 17:10:53.544 [main] DEBUG c.c.c.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-06 17:10:53.546 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-06-06 17:10:53.548 [main] INFO  o.s.t.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-06-06 17:10:53.551 [main] INFO  o.s.t.web.servlet.TestDispatcherServlet - Completed initialization in 3 ms
+2026-06-06 17:10:53.592 [main] INFO  c.c.c.controller.ContactControllerTest - Started ContactControllerTest in 2.534 seconds (process running for 54.197)
+2026-06-06 17:10:53.729 [main] INFO  c.c.c.controller.ContactController - DELETE /api/contacts/1 — user: john@example.com
+2026-06-06 17:10:54.233 [main] INFO  c.c.c.controller.ContactController - POST /api/contacts — user: john@example.com
+2026-06-06 17:10:54.354 [main] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: john@example.com, page: 0, search: 'null'
+2026-06-06 17:10:54.488 [main] WARN  c.c.c.exception.GlobalExceptionHandler - Validation failed at /api/contacts: First name is required
+2026-06-06 17:10:54.623 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2026-06-06 17:10:54.835 [main] INFO  c.c.c.repository.ContactRepositoryTest - Starting ContactRepositoryTest using Java 25 with PID 3632 (started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:10:54.837 [main] DEBUG c.c.c.repository.ContactRepositoryTest - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:10:54.837 [main] INFO  c.c.c.repository.ContactRepositoryTest - The following 1 profile is active: "test"
+2026-06-06 17:10:55.496 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-06 17:10:55.784 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 286 ms. Found 4 JPA repository interfaces.
+2026-06-06 17:10:55.889 [main] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-06-06 17:10:56.047 [main] INFO  o.s.j.d.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:dc80ee34-8d80-4446-88eb-c17f07fd00b6;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-06-06 17:10:56.166 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-06 17:10:56.175 [main] INFO  o.h.c.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-06 17:10:56.239 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-06 17:10:56.253 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-06 17:10:57.126 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-06 17:10:57.188 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:10:57.653 [main] INFO  c.c.c.repository.ContactRepositoryTest - Started ContactRepositoryTest in 3.03 seconds (process running for 58.258)
+2026-06-06 17:11:02.409 [main] INFO  c.c.c.service.AuthService - Login attempt for email: john.doe@example.com
+2026-06-06 17:11:02.493 [main] INFO  c.c.c.service.AuthService - Password change request for user: john.doe@example.com
+2026-06-06 17:11:02.499 [main] INFO  c.c.c.service.AuthService - Password changed successfully for user: john.doe@example.com
+2026-06-06 17:11:02.592 [main] INFO  c.c.c.service.AuthService - Registering new user with email: john.doe@example.com
+2026-06-06 17:11:02.600 [main] WARN  c.c.c.service.AuthService - Registration failed — phone number already in use: 1234567890
+2026-06-06 17:11:02.608 [main] INFO  c.c.c.service.AuthService - Password change request for user: john.doe@example.com
+2026-06-06 17:11:02.640 [main] INFO  c.c.c.service.AuthService - Registering new user with email: john.doe@example.com
+2026-06-06 17:11:02.642 [main] WARN  c.c.c.service.AuthService - Registration failed — email already in use: john.doe@example.com
+2026-06-06 17:11:02.670 [main] INFO  c.c.c.service.AuthService - Login attempt for email: john.doe@example.com
+2026-06-06 17:11:02.672 [main] INFO  c.c.c.service.AuthService - User 'john.doe@example.com' logged in successfully
+2026-06-06 17:11:02.699 [main] INFO  c.c.c.service.AuthService - Password change request for user: john.doe@example.com
+2026-06-06 17:11:02.701 [main] WARN  c.c.c.service.AuthService - Password change failed — incorrect current password for user: john.doe@example.com
+2026-06-06 17:11:02.735 [main] INFO  c.c.c.service.AuthService - Registering new user with email: john.doe@example.com
+2026-06-06 17:11:02.740 [main] INFO  c.c.c.service.AuthService - User registered successfully with id: 1
+2026-06-06 17:11:03.253 [main] DEBUG c.c.c.service.ContactService - Fetching contact id=10 for user 'john@example.com'
+2026-06-06 17:11:03.272 [main] INFO  c.c.c.service.ContactService - Deleting contact id=999 for user 'john@example.com'
+2026-06-06 17:11:03.291 [main] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'john@example.com', page=0, size=10, search='Alice'
+2026-06-06 17:11:03.306 [main] DEBUG c.c.c.service.ContactService - Fetching contact id=999 for user 'john@example.com'
+2026-06-06 17:11:03.322 [main] INFO  c.c.c.service.ContactService - Deleting contact id=10 for user 'john@example.com'
+2026-06-06 17:11:03.325 [main] INFO  c.c.c.service.ContactService - Contact id=10 deleted successfully
+2026-06-06 17:11:03.353 [main] INFO  c.c.c.service.ContactService - Creating contact 'Bob  Jones' for user 'john@example.com'
+2026-06-06 17:11:03.370 [main] INFO  c.c.c.service.ContactService - Contact created with id=11
+2026-06-06 17:11:03.388 [main] DEBUG c.c.c.service.ContactService - Fetching contact id=10 for user 'other@example.com'
+2026-06-06 17:11:03.390 [main] WARN  c.c.c.service.ContactService - Unauthorized access attempt to contact id=10 by user 'other@example.com'
+2026-06-06 17:11:03.404 [main] INFO  c.c.c.service.ContactService - Updating contact id=10 for user 'john@example.com'
+2026-06-06 17:11:03.405 [main] INFO  c.c.c.service.ContactService - Contact id=10 updated successfully
+2026-06-06 17:11:03.424 [main] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'john@example.com', page=0, size=10, search='null'
+2026-06-06 17:11:03.442 [main] DEBUG c.c.c.service.UserService - Fetching profile for user: john.doe@example.com
+2026-06-06 17:11:03.469 [main] DEBUG c.c.c.service.UserService - Fetching profile for user: jane@example.com
+2026-06-06 17:11:03.505 [main] DEBUG c.c.c.service.UserService - Fetching profile for user: john.doe@example.com
+2026-06-06 17:11:03.791 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:11:04.928 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-06 17:11:04.936 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-06 17:11:04.946 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:22:34.026 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 62 class path changes (0 additions, 59 deletions, 3 modifications)
+2026-06-06 17:22:34.046 [Thread-16] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:22:34.048 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-06-06 17:22:34.073 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2026-06-06 17:22:34.230 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Starting ContactManagementSystemApplication using Java 25 with PID 8232 (D:\Projects\contact-management-system\target\classes started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:22:34.231 [restartedMain] DEBUG c.c.c.ContactManagementSystemApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:22:34.231 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-06 17:22:34.501 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-06 17:22:34.503 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2026-06-06 17:22:34.733 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-06 17:22:34.736 [restartedMain] INFO  o.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-06 17:22:34.737 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-06-06 17:22:34.790 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-06 17:22:34.790 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 556 ms
+2026-06-06 17:22:34.832 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2026-06-06 17:22:34.958 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@69e7847e
+2026-06-06 17:22:34.958 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2026-06-06 17:22:34.958 [restartedMain] INFO  o.s.b.a.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/contactsdb'
+2026-06-06 17:22:35.024 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-06 17:22:35.032 [restartedMain] INFO  o.h.c.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-06 17:22:35.057 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-06 17:22:35.074 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-06 17:22:35.114 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-06 17:22:35.114 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:22:35.195 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-06 17:22:35.505 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 8e5c3877-5a4e-4138-ac29-63258c7a5bda
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-06 17:22:35.507 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-06 17:22:35.613 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-06 17:22:35.625 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-06 17:22:35.631 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Started ContactManagementSystemApplication in 1.467 seconds (process running for 2043.976)
+2026-06-06 17:22:35.633 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-06-06 17:22:39.916 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 59 class path changes (59 additions, 0 deletions, 0 modifications)
+2026-06-06 17:22:39.939 [Thread-20] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:22:39.941 [Thread-20] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2026-06-06 17:22:39.945 [Thread-20] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2026-06-06 17:22:40.104 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Starting ContactManagementSystemApplication using Java 25 with PID 8232 (D:\Projects\contact-management-system\target\classes started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:22:40.104 [restartedMain] DEBUG c.c.c.ContactManagementSystemApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:22:40.104 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-06 17:22:40.461 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-06 17:22:40.497 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 4 JPA repository interfaces.
+2026-06-06 17:22:40.666 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-06 17:22:40.667 [restartedMain] INFO  o.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-06 17:22:40.668 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-06-06 17:22:40.686 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-06 17:22:40.686 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 579 ms
+2026-06-06 17:22:40.707 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2026-06-06 17:22:40.906 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@36ee8f6d
+2026-06-06 17:22:40.906 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2026-06-06 17:22:40.907 [restartedMain] INFO  o.s.b.a.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/contactsdb'
+2026-06-06 17:22:41.096 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-06 17:22:41.101 [restartedMain] INFO  o.h.c.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-06 17:22:41.120 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-06 17:22:41.137 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-06 17:22:41.634 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-06 17:22:41.804 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:22:42.061 [restartedMain] DEBUG c.c.c.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-06 17:22:42.181 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-06 17:22:42.181 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-06 17:22:42.349 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-06 17:22:43.048 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-06 17:22:43.067 [restartedMain] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-06 17:22:43.072 [restartedMain] INFO  c.c.c.ContactManagementSystemApplication - Started ContactManagementSystemApplication in 3.035 seconds (process running for 2051.418)
+2026-06-06 17:22:43.078 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' customUserDetailsService and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' authenticationProvider (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-06-06 17:22:48.957 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-06 17:22:49.069 [main] INFO  c.c.c.ContactManagementSystemApplicationTests - Starting ContactManagementSystemApplicationTests using Java 25 with PID 1880 (started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:22:49.071 [main] DEBUG c.c.c.ContactManagementSystemApplicationTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:22:49.072 [main] INFO  c.c.c.ContactManagementSystemApplicationTests - The following 1 profile is active: "test"
+2026-06-06 17:22:52.603 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-06 17:22:53.125 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 386 ms. Found 4 JPA repository interfaces.
+2026-06-06 17:22:55.313 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-06 17:22:55.512 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-06 17:22:55.639 [main] INFO  o.h.c.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-06 17:22:56.997 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-06 17:22:57.141 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-06 17:22:58.091 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-06-06 17:22:58.098 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-06 17:22:58.189 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-06 17:23:01.351 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-06 17:23:01.627 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:23:04.417 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-06 17:23:04.419 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-06 17:23:04.623 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-06 17:23:06.984 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-06 17:23:08.988 [main] INFO  c.c.c.ContactManagementSystemApplicationTests - Started ContactManagementSystemApplicationTests in 21.904 seconds (process running for 25.27)
+2026-06-06 17:23:10.184 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2026-06-06 17:23:10.513 [main] INFO  c.c.c.controller.AuthControllerTest - Starting AuthControllerTest using Java 25 with PID 1880 (started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:23:10.513 [main] DEBUG c.c.c.controller.AuthControllerTest - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:23:10.514 [main] INFO  c.c.c.controller.AuthControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-06-06 17:23:12.129 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-06 17:23:12.129 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-06 17:23:13.178 [main] DEBUG c.c.c.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-06 17:23:13.182 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-06-06 17:23:13.183 [main] INFO  o.s.t.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-06-06 17:23:13.184 [main] INFO  o.s.t.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-06-06 17:23:13.235 [main] INFO  c.c.c.controller.AuthControllerTest - Started AuthControllerTest in 3.052 seconds (process running for 29.517)
+2026-06-06 17:23:14.271 [main] INFO  c.c.c.controller.AuthController - POST /api/auth/login — email: john@example.com
+2026-06-06 17:23:14.621 [main] WARN  c.c.c.exception.GlobalExceptionHandler - Validation failed at /api/auth/register: Email is required
+2026-06-06 17:23:14.668 [main] WARN  c.c.c.exception.GlobalExceptionHandler - Validation failed at /api/auth/login: Invalid email format
+2026-06-06 17:23:14.691 [main] INFO  c.c.c.controller.AuthController - POST /api/auth/register — email: john@example.com
+2026-06-06 17:23:14.831 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2026-06-06 17:23:14.908 [main] INFO  c.c.c.controller.ContactControllerTest - Starting ContactControllerTest using Java 25 with PID 1880 (started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:23:14.910 [main] DEBUG c.c.c.controller.ContactControllerTest - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:23:14.912 [main] INFO  c.c.c.controller.ContactControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-06-06 17:23:15.653 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-06 17:23:15.653 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-06 17:23:16.141 [main] DEBUG c.c.c.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-06 17:23:16.141 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-06-06 17:23:16.141 [main] INFO  o.s.t.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-06-06 17:23:16.146 [main] INFO  o.s.t.web.servlet.TestDispatcherServlet - Completed initialization in 3 ms
+2026-06-06 17:23:16.166 [main] INFO  c.c.c.controller.ContactControllerTest - Started ContactControllerTest in 1.335 seconds (process running for 32.447)
+2026-06-06 17:23:16.244 [main] INFO  c.c.c.controller.ContactController - DELETE /api/contacts/1 — user: john@example.com
+2026-06-06 17:23:16.439 [main] INFO  c.c.c.controller.ContactController - POST /api/contacts — user: john@example.com
+2026-06-06 17:23:16.495 [main] INFO  c.c.c.controller.ContactController - GET /api/contacts — user: john@example.com, page: 0, search: 'null'
+2026-06-06 17:23:16.616 [main] WARN  c.c.c.exception.GlobalExceptionHandler - Validation failed at /api/contacts: First name is required
+2026-06-06 17:23:16.720 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2026-06-06 17:23:16.818 [main] INFO  c.c.c.repository.ContactRepositoryTest - Starting ContactRepositoryTest using Java 25 with PID 1880 (started by NiazAli573 in D:\Projects\contact-management-system)
+2026-06-06 17:23:16.819 [main] DEBUG c.c.c.repository.ContactRepositoryTest - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-06 17:23:16.819 [main] INFO  c.c.c.repository.ContactRepositoryTest - The following 1 profile is active: "test"
+2026-06-06 17:23:17.141 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-06 17:23:17.217 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 4 JPA repository interfaces.
+2026-06-06 17:23:17.257 [main] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-06-06 17:23:17.334 [main] INFO  o.s.j.d.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:c042acc5-c26a-4bb4-ab6d-601f26e19c9a;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-06-06 17:23:17.432 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-06 17:23:17.446 [main] INFO  o.h.c.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-06 17:23:17.687 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-06 17:23:17.694 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-06 17:23:18.317 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-06 17:23:18.370 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:23:18.595 [main] INFO  c.c.c.repository.ContactRepositoryTest - Started ContactRepositoryTest in 1.876 seconds (process running for 34.877)
+2026-06-06 17:23:20.556 [main] DEBUG c.c.c.security.JwtTokenProvider - Generating JWT token for user: testuser@example.com
+2026-06-06 17:23:21.105 [main] DEBUG c.c.c.security.JwtTokenProvider - Generating JWT token for user: testuser@example.com
+2026-06-06 17:23:21.115 [main] DEBUG c.c.c.security.JwtTokenProvider - Generating JWT token for user: testuser@example.com
+2026-06-06 17:23:21.146 [main] DEBUG c.c.c.security.JwtTokenProvider - Generating JWT token for user: testuser@example.com
+2026-06-06 17:23:21.157 [main] WARN  c.c.c.security.JwtTokenProvider - Invalid JWT token: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2026-06-06 17:23:21.162 [main] WARN  c.c.c.security.JwtTokenProvider - Invalid JWT token: Invalid compact JWT string: Compact JWSs must contain exactly 2 period characters, and compact JWEs must contain exactly 4.  Found: 5
+2026-06-06 17:23:21.163 [main] WARN  c.c.c.security.JwtTokenProvider - Invalid JWT token: CharSequence cannot be null or empty.
+2026-06-06 17:23:21.166 [main] DEBUG c.c.c.security.JwtTokenProvider - Generating JWT token for user: testuser@example.com
+2026-06-06 17:23:21.174 [main] WARN  c.c.c.security.JwtTokenProvider - Invalid JWT token: JWT expired 10170 milliseconds ago at 2026-06-06T12:23:11.000Z. Current time: 2026-06-06T12:23:21.170Z. Allowed clock skew: 0 milliseconds.
+2026-06-06 17:23:21.180 [main] DEBUG c.c.c.security.JwtTokenProvider - Generating JWT token for user: testuser@example.com
+2026-06-06 17:23:22.176 [main] INFO  c.c.c.service.AuthService - Login attempt for email: john.doe@example.com
+2026-06-06 17:23:22.244 [main] INFO  c.c.c.service.AuthService - Password change request for user: john.doe@example.com
+2026-06-06 17:23:22.246 [main] INFO  c.c.c.service.AuthService - Password changed successfully for user: john.doe@example.com
+2026-06-06 17:23:22.289 [main] INFO  c.c.c.service.AuthService - Registering new user with email: john.doe@example.com
+2026-06-06 17:23:22.290 [main] WARN  c.c.c.service.AuthService - Registration failed — phone number already in use: 1234567890
+2026-06-06 17:23:22.305 [main] INFO  c.c.c.service.AuthService - Password change request for user: john.doe@example.com
+2026-06-06 17:23:22.318 [main] INFO  c.c.c.service.AuthService - Registering new user with email: john.doe@example.com
+2026-06-06 17:23:22.320 [main] WARN  c.c.c.service.AuthService - Registration failed — email already in use: john.doe@example.com
+2026-06-06 17:23:22.333 [main] INFO  c.c.c.service.AuthService - Login attempt for email: john.doe@example.com
+2026-06-06 17:23:22.336 [main] INFO  c.c.c.service.AuthService - User 'john.doe@example.com' logged in successfully
+2026-06-06 17:23:22.349 [main] INFO  c.c.c.service.AuthService - Password change request for user: john.doe@example.com
+2026-06-06 17:23:22.350 [main] WARN  c.c.c.service.AuthService - Password change failed — incorrect current password for user: john.doe@example.com
+2026-06-06 17:23:22.364 [main] INFO  c.c.c.service.AuthService - Registering new user with email: john.doe@example.com
+2026-06-06 17:23:22.365 [main] INFO  c.c.c.service.AuthService - User registered successfully with id: 1
+2026-06-06 17:23:22.612 [main] INFO  c.c.c.service.ContactService - Importing contacts from CSV for user 'john@example.com'
+2026-06-06 17:23:22.685 [main] INFO  c.c.c.service.ContactService - Exporting contacts to CSV for user 'john@example.com'
+2026-06-06 17:23:22.699 [main] DEBUG c.c.c.service.ContactService - Fetching contact id=10 for user 'john@example.com'
+2026-06-06 17:23:22.707 [main] INFO  c.c.c.service.ContactService - Deleting contact id=999 for user 'john@example.com'
+2026-06-06 17:23:22.717 [main] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'john@example.com', page=0, size=10, search='Alice'
+2026-06-06 17:23:22.759 [main] INFO  c.c.c.service.ContactService - Exporting contacts to CSV for user 'john@example.com'
+2026-06-06 17:23:22.770 [main] DEBUG c.c.c.service.ContactService - Fetching contact id=999 for user 'john@example.com'
+2026-06-06 17:23:22.782 [main] INFO  c.c.c.service.ContactService - Deleting contact id=10 for user 'john@example.com'
+2026-06-06 17:23:22.783 [main] INFO  c.c.c.service.ContactService - Contact id=10 deleted successfully
+2026-06-06 17:23:22.790 [main] INFO  c.c.c.service.ContactService - Creating contact 'Bob  Jones' for user 'john@example.com'
+2026-06-06 17:23:22.794 [main] INFO  c.c.c.service.ContactService - Contact created with id=11
+2026-06-06 17:23:22.800 [main] INFO  c.c.c.service.ContactService - Importing contacts from CSV for user 'john@example.com'
+2026-06-06 17:23:22.805 [main] DEBUG c.c.c.service.ContactService - Fetching contact id=10 for user 'other@example.com'
+2026-06-06 17:23:22.806 [main] WARN  c.c.c.service.ContactService - Unauthorized access attempt to contact id=10 by user 'other@example.com'
+2026-06-06 17:23:22.815 [main] INFO  c.c.c.service.ContactService - Updating contact id=10 for user 'john@example.com'
+2026-06-06 17:23:22.816 [main] INFO  c.c.c.service.ContactService - Contact id=10 updated successfully
+2026-06-06 17:23:22.820 [main] INFO  c.c.c.service.ContactService - Creating contact 'No  Collections' for user 'john@example.com'
+2026-06-06 17:23:22.821 [main] INFO  c.c.c.service.ContactService - Contact created with id=12
+2026-06-06 17:23:22.829 [main] DEBUG c.c.c.service.ContactService - Fetching contacts for user 'john@example.com', page=0, size=10, search='null'
+2026-06-06 17:23:22.836 [main] INFO  c.c.c.service.ContactService - Creating contact 'Labels  Test' for user 'john@example.com'
+2026-06-06 17:23:22.837 [main] INFO  c.c.c.service.ContactService - Contact created with id=null
+2026-06-06 17:23:22.858 [main] DEBUG c.c.c.service.UserService - Fetching profile for user: john.doe@example.com
+2026-06-06 17:23:22.868 [main] DEBUG c.c.c.service.UserService - Fetching profile for user: jane@example.com
+2026-06-06 17:23:22.874 [main] DEBUG c.c.c.service.UserService - Fetching profile for user: john.doe@example.com
+2026-06-06 17:23:22.979 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-06 17:23:23.697 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-06 17:23:23.700 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-06 17:23:23.708 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

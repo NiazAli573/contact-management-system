@@ -148,6 +148,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<argLine>
+						@{argLine}
 						-XX:+EnableDynamicAgentLoading
 						-Dnet.bytebuddy.experimental=true
 						-Djdk.attach.allowAttachSelf=true
@@ -159,6 +160,26 @@
 						--add-opens java.base/java.io=ALL-UNNAMED
 					</argLine>
 				</configuration>
+			</plugin>
+			<!-- Jacoco Maven Plugin for Code Coverage -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.12</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<!-- SonarQube Maven Plugin -->
 			<plugin>

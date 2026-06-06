@@ -192,4 +192,135 @@ class ContactServiceTest {
         assertThatThrownBy(() -> contactService.deleteContact(owner, 999L))
                 .isInstanceOf(ResourceNotFoundException.class);
     }
+
+    // ─── Email and Phone Edge Cases ──────────────────────────────────────────
+
+    @Test
+    @DisplayName("CreateContact - Handles null emails and phones")
+    void createContact_NullCollections() {
+        ContactRequest request = new ContactRequest();
+        request.setFirstName("No");
+        request.setLastName("Collections");
+        request.setEmails(null);
+        request.setPhones(null);
+
+        Contact newContact = Contact.builder().id(12L).owner(owner)
+                .emails(new ArrayList<>()).phones(new ArrayList<>()).build();
+        when(contactRepository.save(any(Contact.class))).thenReturn(newContact);
+
+        ContactResponse response = contactService.createContact(owner, request);
+
+        assertThat(response.getEmails()).isEmpty();
+        assertThat(response.getPhones()).isEmpty();
+        verify(contactRepository).save(argThat(c -> c.getEmails().isEmpty() && c.getPhones().isEmpty()));
+    }
+
+    @Test
+    @DisplayName("CreateContact - Handles valid and invalid labels, falling back to default")
+    void createContact_LabelHandling() {
+        ContactRequest request = new ContactRequest();
+        request.setFirstName("Labels");
+        request.setLastName("Test");
+
+        com.contactmanager.contact_management_system.dto.request.ContactEmailRequest emailReq1 = new com.contactmanager.contact_management_system.dto.request.ContactEmailRequest();
+        emailReq1.setEmail("work@example.com");
+        emailReq1.setLabel("WORK");
+
+        com.contactmanager.contact_management_system.dto.request.ContactEmailRequest emailReq2 = new com.contactmanager.contact_management_system.dto.request.ContactEmailRequest();
+        emailReq2.setEmail("invalid@example.com");
+        emailReq2.setLabel("INVALID_LABEL");
+
+        request.setEmails(List.of(emailReq1, emailReq2));
+
+        com.contactmanager.contact_management_system.dto.request.ContactPhoneRequest phoneReq1 = new com.contactmanager.contact_management_system.dto.request.ContactPhoneRequest();
+        phoneReq1.setPhoneNumber("12345");
+        phoneReq1.setLabel("HOME");
+
+        com.contactmanager.contact_management_system.dto.request.ContactPhoneRequest phoneReq2 = new com.contactmanager.contact_management_system.dto.request.ContactPhoneRequest();
+        phoneReq2.setPhoneNumber("99999");
+        phoneReq2.setLabel("STRANGE_LABEL");
+
+        request.setPhones(List.of(phoneReq1, phoneReq2));
+
+        when(contactRepository.save(any(Contact.class))).thenAnswer(inv -> inv.getArgument(0));
+
+        ContactResponse response = contactService.createContact(owner, request);
+
+        assertThat(response.getEmails()).hasSize(2);
+        assertThat(response.getEmails().get(0).getLabel()).isEqualTo("WORK");
+        assertThat(response.getEmails().get(1).getLabel()).isEqualTo("PERSONAL"); // Fallback
+
+        assertThat(response.getPhones()).hasSize(2);
+        assertThat(response.getPhones().get(0).getLabel()).isEqualTo("HOME");
+        assertThat(response.getPhones().get(1).getLabel()).isEqualTo("MOBILE"); // Fallback
+    }
+
+    // ─── Export/Import CSV ───────────────────────────────────────────────────
+
+    @Test
+    @DisplayName("ExportToCsv - Handles empty contacts list")
+    void exportToCsv_EmptyList() {
+        when(contactRepository.findByOwner(eq(owner), any(Pageable.class))).thenReturn(new PageImpl<>(new ArrayList<>()));
+
+        byte[] csvBytes = contactService.exportToCsv(owner);
+        String csvString = new String(csvBytes);
+
+        assertThat(csvString).contains("FirstName", "LastName", "Title", "Emails", "Phones");
+    }
+
+    @Test
+    @DisplayName("ExportToCsv - Exports multiple contacts correctly")
+    void exportToCsv_MultipleContacts() {
+        Contact contact2 = Contact.builder()
+                .id(11L)
+                .firstName("Bob")
+                .lastName("Smith")
+                .owner(owner)
+                .emails(List.of(
+                        com.contactmanager.contact_management_system.entity.ContactEmail.builder()
+                                .email("bob@work.com").label(com.contactmanager.contact_management_system.entity.enums.EmailLabel.WORK).build()
+                ))
+                .phones(List.of(
+                        com.contactmanager.contact_management_system.entity.ContactPhone.builder()
+                                .phoneNumber("555-1234").label(com.contactmanager.contact_management_system.entity.enums.PhoneLabel.MOBILE).build()
+                ))
+                .build();
+
+        when(contactRepository.findByOwner(eq(owner), any(Pageable.class)))
+                .thenReturn(new PageImpl<>(List.of(contact, contact2)));
+
+        byte[] csvBytes = contactService.exportToCsv(owner);
+        String csvString = new String(csvBytes);
+
+        assertThat(csvString).contains("Alice");
+        assertThat(csvString).contains("Bob");
+        assertThat(csvString).contains("bob@work.com:WORK");
+        assertThat(csvString).contains("555-1234:MOBILE");
+    }
+
+    @Test
+    @DisplayName("ImportFromCsv - Successfully imports contacts")
+    void importFromCsv_Success() throws Exception {
+        String csvContent = "FirstName,LastName,Title,Emails,Phones\n" +
+                "Imported,User,Dev,test@example.com:PERSONAL,12345:WORK\n" +
+                "Invalid,Row\n"; // Missing fields should be skipped or handled safely
+                
+        org.springframework.mock.web.MockMultipartFile file = new org.springframework.mock.web.MockMultipartFile(
+                "file", "contacts.csv", "text/csv", csvContent.getBytes());
+
+        contactService.importFromCsv(owner, file);
+
+        verify(contactRepository, times(2)).save(any(Contact.class));
+    }
+
+    @Test
+    @DisplayName("ImportFromCsv - Handles empty file")
+    void importFromCsv_EmptyFile() throws Exception {
+        org.springframework.mock.web.MockMultipartFile file = new org.springframework.mock.web.MockMultipartFile(
+                "file", "contacts.csv", "text/csv", new byte[0]);
+
+        contactService.importFromCsv(owner, file);
+
+        verify(contactRepository, never()).save(any(Contact.class));
+    }
 }
