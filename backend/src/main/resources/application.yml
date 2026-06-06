@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/contactsdb
     username: postgres
-    password: nas13041
+    password: ${DB_PASSWORD:nas13041}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -24,7 +24,7 @@ spring:
 
 app:
   jwt:
-    secret: "Y29udGFjdE1hbmFnZW1lbnRTeXN0ZW1TZWNyZXRLZXkyMDI2UHJvZHVjdGlvbkp3dA=="
+    secret: ${JWT_SECRET:Y29udGFjdE1hbmFnZW1lbnRTeXN0ZW1TZWNyZXRLZXkyMDI2UHJvZHVjdGlvbkp3dA==}
     expiration: 86400000   # 24 hours in milliseconds
 
 logging:
